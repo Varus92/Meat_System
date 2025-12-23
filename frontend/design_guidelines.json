@@ -1,0 +1,156 @@
+{
+  "design_system": {
+    "identity": {
+      "name": "Macelleria Tumminello Management System",
+      "persona": "The Artisan Butcher",
+      "vibe": "Traditional, Hygienic, Efficient, Warm",
+      "archetype": "Organic & Earthy (with a Butcher twist)"
+    },
+    "typography": {
+      "fonts": {
+        "headings": {
+          "family": "Playfair Display, serif",
+          "usage": "Page titles, Section headers, Modal titles",
+          "weights": ["600", "700"]
+        },
+        "body": {
+          "family": "Manrope, sans-serif",
+          "usage": "UI elements, Buttons, Data tables, Inputs",
+          "weights": ["400", "500", "600"]
+        }
+      },
+      "scale": {
+        "h1": "text-4xl md:text-5xl font-bold tracking-tight",
+        "h2": "text-3xl font-semibold tracking-tight",
+        "h3": "text-2xl font-semibold",
+        "body": "text-base leading-relaxed",
+        "small": "text-sm font-medium tracking-wide uppercase"
+      }
+    },
+    "colors": {
+      "palette": {
+        "primary": {
+          "DEFAULT": "#5D1919",
+          "foreground": "#FFFFFF",
+          "description": "Deep Burgundy - Represents raw meat, wine, tradition"
+        },
+        "secondary": {
+          "DEFAULT": "#F9F5F0",
+          "foreground": "#2D2D2D",
+          "description": "Cream/Butcher Paper - The canvas, clean and organic"
+        },
+        "accent": {
+          "DEFAULT": "#C5A059",
+          "foreground": "#1A1A1A",
+          "description": "Antique Gold - Quality seal, premium accents"
+        },
+        "background": "#F9F5F0",
+        "foreground": "#2D2D2D",
+        "muted": "#E5E0D8",
+        "border": "#D6CFC7",
+        "input": "#FFFFFF"
+      },
+      "functional": {
+        "success": "#2E7D32",
+        "warning": "#E65100",
+        "error": "#B71C1C",
+        "info": "#1565C0"
+      }
+    },
+    "visual_enhancers": {
+      "texture": {
+        "name": "Butcher Paper Grain",
+        "css": "background-image: url('https://images.unsplash.com/photo-1706271952285-01b5e3fc2d78?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwzfHxidXRjaGVyJTIwcGFwZXIlMjB0ZXh0dXJlfGVufDB8fHx8MTc2NjM2NjI5Nnww&ixlib=rb-4.1.0&q=85'); background-blend-mode: multiply; opacity: 0.05;"
+      },
+      "shadows": {
+        "card": "shadow-[0_2px_8px_rgba(93,25,25,0.08)]",
+        "floating": "shadow-[0_8px_24px_rgba(93,25,25,0.12)]"
+      },
+      "borders": {
+        "style": "border border-[#D6CFC7]",
+        "radius": "rounded-md"
+      }
+    },
+    "layout": {
+      "spacing": {
+        "container_padding": "p-6 md:p-8 lg:p-12",
+        "section_gap": "gap-8",
+        "item_gap": "gap-4"
+      },
+      "grids": {
+        "dashboard": "grid grid-cols-1 md:grid-cols-12 gap-6",
+        "catalog": "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6",
+        "order_ticket": "flex flex-col gap-2 border-b border-dashed border-gray-300 pb-4"
+      }
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-[#5D1919] text-white hover:bg-[#4A1212] shadow-md rounded-md px-6 py-3 font-medium transition-all active:scale-95",
+      "secondary": "bg-white border border-[#D6CFC7] text-[#5D1919] hover:bg-[#F9F5F0] rounded-md px-6 py-3 font-medium transition-all",
+      "ghost": "text-[#5D1919] hover:bg-[#5D1919]/10 rounded-md px-4 py-2 transition-all"
+    },
+    "cards": {
+      "base": "bg-white border border-[#D6CFC7] rounded-lg shadow-sm p-6 relative overflow-hidden",
+      "interactive": "hover:shadow-md hover:border-[#C5A059] transition-all cursor-pointer"
+    },
+    "inputs": {
+      "base": "bg-white border border-[#D6CFC7] rounded-md px-4 py-3 focus:ring-2 focus:ring-[#5D1919]/20 focus:border-[#5D1919] outline-none transition-all placeholder:text-gray-400"
+    },
+    "badges": {
+      "status_pending": "bg-yellow-100 text-yellow-800 border border-yellow-200 px-2 py-1 rounded-full text-xs font-bold uppercase",
+      "status_ready": "bg-green-100 text-green-800 border border-green-200 px-2 py-1 rounded-full text-xs font-bold uppercase",
+      "status_urgent": "bg-red-100 text-red-800 border border-red-200 px-2 py-1 rounded-full text-xs font-bold uppercase"
+    }
+  },
+  "assets": {
+    "images": {
+      "login_bg": {
+        "url": "https://images.unsplash.com/photo-1759682763274-5d6edfca514d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwzfHxzaWNpbGlhbiUyMGxhbmRzY2FwZSUyMHZpbmV5YXJkfGVufDB8fHx8MTc2NjM2NjI5NHww&ixlib=rb-4.1.0&q=85",
+        "alt": "Sicilian Vineyard Landscape"
+      },
+      "texture_bg": {
+        "url": "https://images.unsplash.com/photo-1706271952285-01b5e3fc2d78?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHwzfHxidXRjaGVyJTIwcGFwZXIlMjB0ZXh0dXJlfGVufDB8fHx8MTc2NjM2NjI5Nnww&ixlib=rb-4.1.0&q=85",
+        "alt": "Butcher Paper Texture"
+      },
+      "placeholders": {
+        "meat_generic": {
+          "url": "https://images.unsplash.com/photo-1703034176545-9ed65e4078f7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHw0fHxyYXclMjBiZWVmJTIwc3RlYWslMjBvbiUyMHdvb2RlbiUyMGJvYXJkfGVufDB8fHx8MTc2NjM2NjI4NHww&ixlib=rb-4.1.0&q=85",
+          "alt": "Fresh Meat Cut"
+        }
+      }
+    }
+  },
+  "instructions_to_main_agent": {
+    "general": [
+      "Implement a 'Light Mode' first approach. The interface should feel like a clean, well-lit butcher shop.",
+      "Use the 'Butcher Paper' texture as a subtle overlay on the main background to give it an organic feel.",
+      "Ensure all touch targets (buttons, inputs) are large (min 44px height) for ease of use by staff who might be wearing gloves or working fast.",
+      "The 'Lab View' (Dashboard) must be high-contrast and readable from a distance (like a Kitchen Display System).",
+      "Use the 'Playfair Display' font for all major headings to establish the brand identity.",
+      "Use 'Manrope' for all functional text, numbers, and order details."
+    ],
+    "tailwind_overrides": {
+      "colors": {
+        "primary": "5D1919",
+        "secondary": "F9F5F0",
+        "accent": "C5A059",
+        "background": "F9F5F0",
+        "foreground": "2D2D2D"
+      }
+    },
+    "component_specifics": {
+      "order_ticket": "Design the order card to look like a physical paper ticket. Use a dashed border at the bottom. Include a clear 'Pickup Time' in large, bold text.",
+      "sidebar": "Use a dark sidebar (Deep Burgundy #5D1919) with white/gold text for high contrast against the light content area.",
+      "notifications": "Use a 'Toast' system (Sonner) for new orders, but also implement a visual indicator (flashing badge) in the Lab View."
+    }
+  },
+  "universal_guidelines": [
+    "Do not use generic gradients. Use solid colors or subtle textures.",
+    "Avoid 'Inter' font. Use the specified font stack.",
+    "Ensure all interactive elements have hover states that increase contrast.",
+    "Use 'data-testid' on all interactive elements.",
+    "Do not center-align the main app container.",
+    "Use 'sonner' for toasts."
+  ]
+}
