@@ -1,0 +1,106 @@
+/* Macelleria Tumminello - Custom Styles */
+
+/* Sidebar styles */
+.sidebar {
+    background-color: #5D1919;
+    min-height: 100vh;
+}
+
+.sidebar-link {
+    @apply flex items-center gap-3 px-4 py-3 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all;
+}
+
+.sidebar-link.active {
+    @apply text-white bg-white/20;
+}
+
+/* Card hover effect */
+.card-hover {
+    @apply transition-all duration-200;
+}
+
+.card-hover:hover {
+    @apply shadow-lg border-[#C5A059];
+    transform: translateY(-2px);
+}
+
+/* Input focus styles */
+.input-focus {
+    @apply focus:ring-2 focus:ring-[#5D1919]/20 focus:border-[#5D1919];
+}
+
+/* Button press effect */
+.btn-press:active {
+    transform: scale(0.98);
+}
+
+/* Time slot badge */
+.time-slot-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold;
+}
+
+.time-slot-mattina {
+    @apply bg-amber-100 text-amber-800;
+}
+
+.time-slot-pomeriggio {
+    @apply bg-indigo-100 text-indigo-800;
+}
+
+/* Large touch targets */
+.touch-target {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Lab view - large text for readability */
+.lab-view .order-customer {
+    @apply text-2xl font-bold;
+}
+
+.lab-view .order-items {
+    @apply text-xl;
+}
+
+.lab-view .order-time {
+    @apply text-3xl font-bold;
+}
+
+/* Notification bell shake */
+@keyframes bell-shake {
+    0%, 100% { transform: rotate(0); }
+    25% { transform: rotate(-15deg); }
+    50% { transform: rotate(15deg); }
+    75% { transform: rotate(-10deg); }
+}
+
+.bell-shake {
+    animation: bell-shake 0.5s ease-in-out;
+}
+
+/* Category tabs */
+.category-tab {
+    @apply px-4 py-2 rounded-full text-sm font-medium transition-all cursor-pointer;
+}
+
+.category-tab:hover {
+    @apply bg-[#5D1919]/10;
+}
+
+.category-tab.active {
+    @apply bg-[#5D1919] text-white;
+}
+
+/* Empty state */
+.empty-state {
+    @apply flex flex-col items-center justify-center py-16 text-center;
+}
+
+.empty-state-icon {
+    @apply w-24 h-24 text-[#D6CFC7] mb-4;
+}
+
+/* Loading spinner */
+.spinner {
+    @apply animate-spin h-8 w-8 border-4 border-[#5D1919] border-t-transparent rounded-full;
+}
