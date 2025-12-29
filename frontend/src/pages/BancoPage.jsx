@@ -4,7 +4,7 @@ import axios from "axios";
 import { API, useAuth } from "../App";
 import { toast } from "sonner";
 import Sidebar from "../components/Sidebar";
-import { Button } from "../components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
 import { Textarea } from "../components/ui/textarea";
@@ -13,14 +13,13 @@ import { Badge } from "../components/ui/badge";
 import { Calendar } from "../components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "../components/ui/popover";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "../components/ui/dialog";
 import { ScrollArea } from "../components/ui/scroll-area";
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "../components/ui/command";
 import { format } from "date-fns";
 import { it } from "date-fns/locale";
 import { 
   Plus, Minus, CalendarIcon, Search, User, Phone, 
-  ShoppingCart, Trash2, Printer, Check, Package, Users, ChevronDown, X
+  ShoppingCart, Trash2, Check, Package, Users, ChevronDown, X
 } from "lucide-react";
 
 const BancoPage = () => {

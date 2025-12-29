@@ -28,6 +28,16 @@ JWT_ALGORITHM = "HS256"
 # Create the main app
 app = FastAPI()
 
+origins = os.environ.get("CORS_ORIGINS", "").split(",")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
 
@@ -147,7 +157,8 @@ class OrderResponse(BaseModel):
     updated_at: Optional[str] = None
     modifications: Optional[List[dict]] = []
 
-# ==================== AUTH HELPERS ====================
+
+    # ==================== AUTH HELPERS ====================
 
 def hash_password(password: str) -> str:
     return bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
@@ -176,6 +187,7 @@ async def get_current_user(credentials: HTTPAuthorizationCredentials = Depends(s
         raise HTTPException(status_code=401, detail="Token scaduto")
     except jwt.InvalidTokenError:
         raise HTTPException(status_code=401, detail="Token non valido")
+
 
 # ==================== AUTH ROUTES ====================
 
@@ -581,7 +593,15 @@ async def get_new_orders_count(current_user: dict = Depends(get_current_user)):
 @api_router.post("/seed")
 async def seed_data():
     # Check if already seeded
-    existing_products = await db.products.count_documents({})
+    try:
+        existing_products = await db.products.count_documents({})
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail="Database non raggiungibile"
+        )
+
+
     if existing_products > 0:
         return {"message": "Dati già presenti"}
     
@@ -660,14 +680,6 @@ async def root():
 
 # Include the router in the main app
 app.include_router(api_router)
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_credentials=True,
-    allow_origins=os.environ.get('CORS_ORIGINS', '*').split(','),
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
 # Configure logging
 logging.basicConfig(

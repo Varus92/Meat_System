@@ -66,7 +66,7 @@ function setupDevServer(config) {
       // Validate and set CORS headers
       const origin = req.get("Origin");
       if (origin && isAllowedOrigin(origin)) {
-        res.header("Access-Control-Allow-Origin", origin);
+        //res.header("Access-Control-Allow-Origin", origin);
         res.header("Access-Control-Allow-Headers", "Content-Type, x-api-key");
       }
 
