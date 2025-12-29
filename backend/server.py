@@ -601,7 +601,6 @@ async def seed_data():
             detail="Database non raggiungibile"
         )
 
-
     if existing_products > 0:
         return {"message": "Dati già presenti"}
     
