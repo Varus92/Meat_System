@@ -1,0 +1,34 @@
+name: Deploy Website
+
+on:
+  push:
+    branches:
+      - release
+env:
+  CI: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: react
+        run: npm install --save react@17.0.2 react-dom@17.0.2 @types/react@17.0.2 @types/react-dom@17.0.2
+
+      - name: Install
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Firebase
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_DIMOREJOE }}"
+          expires: 30d
+          projectId: dimorejoe
+          channelId: live
