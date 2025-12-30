@@ -25,6 +25,7 @@ jobs:
         run: npm install ajv@6.12.6 ajv-keywords@3.5.2
 
       - name: Build
+        working-directory: frontend
         run: npm run build
 
       - name: Deploy to Firebase
