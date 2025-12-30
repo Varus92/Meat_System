@@ -34,5 +34,5 @@ jobs:
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_MEAT }}"
-          projectId: dimorejoe
+          projectId: meatsystem-79b63
           channelId: live
