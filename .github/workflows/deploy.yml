@@ -23,7 +23,7 @@ jobs:
 
       - name: Install dependencies
         working-directory: frontend
-        run: npm install ajv@6.12.6 ajv-keywords@3.5.2
+        run: npm ci --legacy-peer-deps
 
       - name: Build
         working-directory: frontend
