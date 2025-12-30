@@ -22,7 +22,8 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm install ajv@6.12.6 ajv-keywords@3.5.2
+        working-directory: frontend
+        run: npm ci --legacy-peer-deps
 
       - name: Build
         working-directory: frontend
@@ -32,6 +33,6 @@ jobs:
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_DIMOREJOE }}"
-          projectId: dimorejoe
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_MEAT }}"
+          projectId: meatsystem-79b63
           channelId: live
